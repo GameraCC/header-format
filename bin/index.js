@@ -8,8 +8,8 @@ let input = process.argv.slice(2, process.argv.length).join(' ').split('\n').fil
     concatenated = concatenated.split(/(: )/)
 
     const header = {
-        key: concatenated[0],
-        value: concatenated[2]
+        key: concatenated[0].toLowerCase(),
+        value: concatenated[2] ?? ''
     }
 
     return header
@@ -30,11 +30,16 @@ quotedBrandValueSecHeaders.forEach(key => {
 // Fix sec-ch-ua-windows header
 const quotedHeaders = ['sec-ch-ua-platform-version', 'sec-ch-ua-platform']
 quotedHeaders.forEach(key => {
-    const secHeaderIndex = input.findIndex(header => header.key = key)
-    if (secHeaderIndex > -1) input[secHeaderIndex].value = `"${input[secHeaderIndex.value]}"`
+    const secHeaderIndex = input.findIndex(header => header.key === key)
+    if (secHeaderIndex > -1) input[secHeaderIndex].value = `"${input[secHeaderIndex].value}"`
 })
 
-// Format headers
-const formatted = formatChromeHeaders(input)
+const inputFormatted = input.reduce((acc, cur) => {
+    acc.push(`${cur.key}: ${cur.value}`)
+    return acc
+}, [])
 
-console.log(colors.america(formatted))
+// Format headers
+const formatted = formatChromeHeaders(inputFormatted)
+
+console.log(colors.green(formatted))
