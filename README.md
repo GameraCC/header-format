@@ -24,7 +24,7 @@ PS C:\> chromehf '
 ## Notes
 Transforms headers based on [hard coded parameters](bin/index.js#L6-L16)
 
-# Current Transformations
+### Current Transformations
 ```
   user-agent -> replace with "this.userAgent"
   cookie -> delete
