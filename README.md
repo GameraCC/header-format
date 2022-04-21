@@ -22,4 +22,4 @@ PS C:\> chromehf '
 ```
 
 ## Notes
-Transforms headers based upon [hard coded parameters](bin/index.js#L6-16)
+Transforms headers based on [hard coded parameters](bin/index.js#L6-L16)
