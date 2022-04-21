@@ -1,0 +1,8 @@
+{
+  "name": "chrome-header-format",
+  "version": "1.0.0",
+  "description": "Formats Chrome Headers Automagically",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
