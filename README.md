@@ -7,7 +7,7 @@ npm install- g
 ```
 
 ## Usage
-```ps
+```powershell
 PS C:\> chromehf '
   header_key: header_value
   header_key1: header_value2
